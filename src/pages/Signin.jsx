@@ -91,7 +91,7 @@ export const Signin = () => {
    e.preventDefault();
    dispatch(loginStart())
    try{
-    await axios.post(`http://localhost:8000/api/auth/signin`,{
+    await axios.post(`https://youtube-backend-cyan.vercel.app/api/auth/signin`,{
       name: nameLogin,
       password:passwordLogin,
     },{
@@ -108,7 +108,7 @@ export const Signin = () => {
  const signInWithGoogle = () =>{
   dispatch(loginStart())
   signInWithPopup(auth,provider).then( async(result)=> {
-    await axios.post(`https://utube-backend.vercel.app/api/auth/google`,{
+    await axios.post(`https://youtube-backend-cyan.vercel.app/api/auth/google`,{
       name: result.user.displayName,
       email: result.user.email,
       img: result.user.photoURL,
@@ -123,7 +123,7 @@ export const Signin = () => {
  }
  const signupHandler = async ()=>{
   try{
-    await axios.post(`http://localhost:8000/api/auth/signup`,{
+    await axios.post(`https://youtube-backend-cyan.vercel.app/api/auth/signup`,{
       name,
       email,
       password,
