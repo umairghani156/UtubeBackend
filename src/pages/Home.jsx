@@ -23,7 +23,7 @@ export const Home = ({type}) => {
    const [videos, setVideos] = useState([]);
 
    const fetchVideoData = async () =>{
-    const res = await axios.get(`http://localhost:8000/api/videos/${type}`);
+    const res = await axios.get(`https://youtube-backend-cyan.vercel.app/api/videos/${type}`);
     // console.log("Res", res);
     setVideos(res.data)
    }
