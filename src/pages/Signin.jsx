@@ -107,6 +107,7 @@ export const Signin = () => {
 
  const signInWithGoogle = () =>{
   dispatch(loginStart())
+    console.log("Working")
   signInWithPopup(auth,provider).then( async(result)=> {
     await axios.post(`https://youtube-backend-cyan.vercel.app/api/auth/google`,{
       name: result.user.displayName,
