@@ -108,7 +108,7 @@ export const Signin = () => {
  const signInWithGoogle = () =>{
   dispatch(loginStart())
   signInWithPopup(auth,provider).then( async(result)=> {
-    await axios.post(`http://localhost:8000/api/auth/google`,{
+    await axios.post(`https://utube-backend.vercel.app/api/auth/google`,{
       name: result.user.displayName,
       email: result.user.email,
       img: result.user.photoURL,
